@@ -1,13 +1,19 @@
-
+<app-navbar></app-navbar>
 <div class="row container mt-4">
     <div class="col-3">
         <h2>Busquedas</h2>
         <hr>
-        <ul>
-            <li>Buscar pais</li>
-            <li>Por region</li>
-            <li>Por capital</li>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action list-group-item-dark">Buscar pais</li>
+            <li class="list-group-item list-group-item-action list-group-item-dark">Por region</li>
+            <li class="list-group-item list-group-item-action list-group-item-dark">Por capital</li>
         </ul>
 
+    </div>
+
+    <div class="col">
+        <h2>Por capital</h2>
+        <hr>
+        <app-por-capital></app-por-capital>
     </div>
 </div>

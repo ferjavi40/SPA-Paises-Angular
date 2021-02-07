@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 //modulos
 import { PaisesModule } from './paises/paises.module';
 import { SharedModule } from './shared/shared.module';
+//rutas
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 
 
@@ -14,8 +18,10 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     PaisesModule,
     SharedModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
