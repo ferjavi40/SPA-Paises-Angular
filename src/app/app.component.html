@@ -4,16 +4,14 @@
         <h2>Busquedas</h2>
         <hr>
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action list-group-item-dark">Buscar pais</li>
-            <li class="list-group-item list-group-item-action list-group-item-dark">Por region</li>
-            <li class="list-group-item list-group-item-action list-group-item-dark">Por capital</li>
+            <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" class="list-group-item list-group-item-action list-group-item-dark cursor">Buscar pais</li>
+            <li routerLink="region" routerLinkActive="active" class="list-group-item list-group-item-action list-group-item-dark cursor">Por region</li>
+            <li routerLink="capital" routerLinkActive="active" class="list-group-item list-group-item-action list-group-item-dark cursor">Por capital</li>
         </ul>
 
     </div>
 
     <div class="col">
-        <h2>Por capital</h2>
-        <hr>
-        <app-por-capital></app-por-capital>
+        <router-outlet></router-outlet>
     </div>
 </div>
