@@ -15,12 +15,9 @@ export class PorPaisComponent {
 
   constructor(private _paisService: PaisService) { }
   //aui estoy aprendiendo a manejar los errores ya despues de consumirlo con el subscribe
-  buscar() {
-    if (this.termino.trim().length === 0) {
-      return
-    }
+  buscar(termino:string) {
     this.hayError = false;
-    console.log(this.termino);
+    this.termino= termino;
     this._paisService.buscarPais(this.termino)
           .subscribe((paises) => {
             // console.log(paises);
@@ -31,6 +28,11 @@ export class PorPaisComponent {
           });
 
     
+  }
+
+  sugerencias( termino:string ){
+    this.hayError= false;
+    //TODO: crear sugerencias
   }
 
 

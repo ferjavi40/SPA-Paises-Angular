@@ -1,0 +1,13 @@
+.img-size {
+    height: 25px;
+}
+
+/* efecto hoover */
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.5);
+
+}
