@@ -4,6 +4,7 @@
             <th scope="col">#</th>
             <th scope="col">Bandera</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Capital</th>
             <th scope="col">Poblacion</th>
             <th scope="col"></th>
         </tr>
@@ -13,6 +14,7 @@
             <th scope="row">{{ i+1 }}</th>
             <td><img [src]="pais.flag" [alt]="pais.name" class="img-size zoom"></td>
             <td>{{pais.name}}</td>
+            <td>{{pais.capital}}</td>
             <td>{{pais.population | number}}</td>
             <!-- hay que llamar el router module en el module para que funciones el router link -->
             <td><a [routerLink]="['/pais', 'pais.alpha2Code']">Ver mas...</a></td>
