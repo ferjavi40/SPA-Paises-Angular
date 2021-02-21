@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-4">
             <h3>Bandera</h3>
-            <img [src]="pais.flag" [alt]="pais.name" class="img-thumbnail">
+            <img [src]="pais.flag" [alt]="pais.name" class="img-thumbnail zoom">
 
         </div>
 
@@ -22,11 +22,34 @@
             <h3>Informacion</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Poblacion</strong> {{pais.population | number}}
+                    <strong>Poblacion:</strong> {{pais.population | number}}
                 </li>
             </ul>
         </div>
     </div>
 
-</ng-template>
+    <div class="row mt-5">
+        <div class="col-6">
+            <div class="card border-dark mb-3" style="max-width: 20rem;">
+                <div class="card-header text-center"><h3>Fronteras</h3></div>
+                <div class="card-body">
+                    <ul *ngFor="let frontera of pais.borders" class="list-group">
+                        <li class="list-group-item text-center">
+                            {{frontera}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
+        </div>
+
+        <div class="col">
+            <div *ngFor="let frontera of pais.borders" class="d-inline-block"> <strong>{{frontera}} , </strong> </div>
+        </div>
+    </div>
+
+    
+
+
+
+</ng-template>
