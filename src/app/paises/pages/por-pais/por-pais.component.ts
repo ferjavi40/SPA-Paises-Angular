@@ -14,15 +14,16 @@ export class PorPaisComponent {
   paises  : Country [] = [];
 
   constructor(private _paisService: PaisService) { }
+
+  //aqui se consume la peticion que hicimos en el servicio, usamos el subscribe aqui por eso!
   //aui estoy aprendiendo a manejar los errores ya despues de consumirlo con el subscribe
   buscar(termino:string) {
     this.hayError = false;
     this.termino= termino;
     this._paisService.buscarPais(this.termino)
           .subscribe((paises) => {
-            // console.log(paises);
             this.paises=paises;
-          },(err)=>{
+          },(err)=>{//aqui estamos manejando el error 
             this.hayError = true;
             this.paises = [];
           });

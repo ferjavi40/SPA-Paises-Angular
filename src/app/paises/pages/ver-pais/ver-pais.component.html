@@ -29,7 +29,8 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-6">
+
+        <div class="col-md-6">
             <div class="card border-dark mb-3" style="max-width: 20rem;">
                 <div class="card-header text-center"><h3>Fronteras</h3></div>
                 <div class="card-body">
@@ -43,9 +44,24 @@
 
         </div>
 
-        <div class="col">
-            <div *ngFor="let frontera of pais.borders" class="d-inline-block"> <strong>{{frontera}} , </strong> </div>
+        <div class="col-md-6">
+            <div class="card border-dark mb-3" style="max-width: 20rem;">
+                <div class="card-header text-center"><h3>Fronteras</h3></div>
+                <div class="card-body">
+                    <ul *ngFor="let frontera of pais.altSpellings" class="list-group">
+                        <li class="list-group-item text-center">
+                            {{frontera}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+
+        
+        
+
+
     </div>
 
     
