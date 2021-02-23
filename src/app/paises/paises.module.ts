@@ -14,13 +14,15 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
 
 
 
+
 @NgModule({
   declarations: [PorCapitalComponent,
     PorPaisComponent,
     PorRegionComponent,
     VerPaisComponent,
     PaisTablaComponent,
-    PaisInputComponent],
+    PaisInputComponent,
+    ],
   imports: [
     CommonModule,
     FormsModule,
