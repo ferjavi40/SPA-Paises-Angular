@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';//este es es para los formularios.
 import { RouterModule} from '@angular/router';//este es para trabajar con las rutas
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorPaisComponent } from './pages/por-pais/por-pais.component';
@@ -27,6 +28,7 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
     CommonModule,
     FormsModule,
     RouterModule,
+    NgbModule
   
   ],
   exports: [
@@ -34,6 +36,7 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
     PorPaisComponent,
     PorRegionComponent,
     VerPaisComponent
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class PaisesModule { }

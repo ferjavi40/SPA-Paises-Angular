@@ -10,6 +10,9 @@ import { Country } from '../../interfaces/pais.interface';
 export class PaisTablaComponent  {
 
   @Input() paises: Country [] = [];
+  public page:number=1;
+  public pageSize:number=10;
+
 
   constructor() { }
 
