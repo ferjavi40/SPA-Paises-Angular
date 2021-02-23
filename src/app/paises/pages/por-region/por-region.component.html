@@ -16,6 +16,6 @@
         </button>
     </div>
 </div>
-<div class="row mt-5">
-    <app-pais-tabla></app-pais-tabla>
+<div *ngIf="this.regionesActivas.length>0" class="row mt-5">
+    <app-pais-tabla [paises]="regionesActivas"></app-pais-tabla>
 </div>

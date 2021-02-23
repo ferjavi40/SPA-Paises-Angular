@@ -30,4 +30,10 @@ export class PaisService {
     return this.http.get<Country >( url );
   }
 
+  buscarRegion( id:string ) {
+    const url = `${ this.apiUrl }/region/${ id }`;
+    return this.http.get< Country[] > (url);
+
+  }
+
 }
