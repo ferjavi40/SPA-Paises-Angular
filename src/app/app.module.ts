@@ -12,7 +12,8 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
+//loader
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 
 
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     PaisesModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    NgxUiLoaderModule,
     
   ],
   providers: [],

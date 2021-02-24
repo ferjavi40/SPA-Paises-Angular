@@ -1,84 +1,90 @@
-<div *ngIf="!pais; else divPais" class="alert alert-info">
-    Espere por favor...
+<div ngxUiLoaderBlurred>
+    <div *ngIf="!pais; else divPais" class="alert alert-info">
+        Espere por favor...
+    </div>
+
+
+    <ng-template #divPais>
+
+        <div class="row">
+            <div class="col-12">
+                <h1>Pais: <small>{{pais.name}}</small></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <h3>Bandera</h3>
+                <img [src]="pais.flag" [alt]="pais.name" class="img-thumbnail zoom">
+
+            </div>
+
+            <div class="col">
+                <h3>Informacion</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Poblacion:</strong> {{pais.population | number}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-md-6">
+                <div class="card border-dark mb-3" style="max-width: 20rem;">
+                    <div class="card-header text-center">
+                        <h3>Fronteras</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul *ngFor="let frontera of pais.borders" class="list-group">
+                            <li class="list-group-item text-center mt-1">
+                                {{frontera}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="card border-dark mb-3" style="max-width: 20rem;">
+                    <div class="card-header text-center">
+                        <h3>Pronunciacion</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul *ngFor="let frontera of pais.altSpellings" class="list-group">
+                            <li class="list-group-item text-center mt-1">
+                                {{frontera}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <h2>Traducciones</h2>
+        <div class="row">
+            <div class="col">
+                <span class="badge bg-primary text-light mr-2 zoom raton">{{pais.translations.br}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.fa}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.ja}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.it}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.de}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.hr}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.nl}}</span>
+                <span class="badge bg-primary mr-2 text-light zoom raton">{{pais.translations.pt}}</span>
+            </div>
+        </div>
+
+
+        <!-- Este es una forma en boostrap para poder ver en la vista lo que estamos haciendo -->
+        <!-- <pre class="mt-5">
+            {{pais | json}}
+        </pre> -->
+
+
+    </ng-template>
 </div>
-
-
-<ng-template #divPais>
-
-    <div class="row">
-        <div class="col-12">
-            <h1>Pais: <small>{{pais.name}}</small></h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-4">
-            <h3>Bandera</h3>
-            <img [src]="pais.flag" [alt]="pais.name" class="img-thumbnail zoom">
-
-        </div>
-
-        <div class="col">
-            <h3>Informacion</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Poblacion:</strong> {{pais.population | number}}
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-
-        <div class="col-md-6">
-            <div class="card border-dark mb-3" style="max-width: 20rem;">
-                <div class="card-header text-center"><h3>Fronteras</h3></div>
-                <div class="card-body">
-                    <ul *ngFor="let frontera of pais.borders" class="list-group">
-                        <li class="list-group-item text-center">
-                            {{frontera}}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-6">
-            <div class="card border-dark mb-3" style="max-width: 20rem;">
-                <div class="card-header text-center"><h3>Pronunciacion</h3></div>
-                <div class="card-body">
-                    <ul *ngFor="let frontera of pais.altSpellings" class="list-group">
-                        <li class="list-group-item text-center">
-                            {{frontera}}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <h2>Traducciones</h2>
-    <div class="row">
-        <div class="col">
-            <span class="badge bg-primary text-light mr-2">{{pais.translations.br}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.fa}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.ja}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.it}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.de}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.hr}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.nl}}</span>
-            <span class="badge bg-primary mr-2 text-light">{{pais.translations.pt}}</span>
-        </div>
-    </div>
-
-    
-<!-- Este es una forma en boostrap para poder ver en la vista lo que estamos haciendo -->
-    <!-- <pre class="mt-5">
-        {{pais | json}}
-    </pre> -->
-
-
-</ng-template>

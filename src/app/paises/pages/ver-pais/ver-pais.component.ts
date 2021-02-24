@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';//este es para subscrbirse a los cambios de la url
 import { PaisService } from '../../services/pais.service';
 import { switchMap, tap } from 'rxjs/operators';
 
 import { Country } from '../../interfaces/pais.interface';
+//Loading
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 
@@ -21,7 +24,9 @@ export class VerPaisComponent implements OnInit {
   //el activatedRoute se utiliza para vigilar los cambios en las rutas en este caso el ID
   constructor(
     private activatedRoute: ActivatedRoute,
-    private _paisService: PaisService
+    private _paisService: PaisService,
+    private ngxLoader: NgxUiLoaderService,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +47,15 @@ export class VerPaisComponent implements OnInit {
     //           console.log(pais);
     //         });
     //   });
+    this.ngxLoader.start();
+    this.http.get(`https://api.npmjs.org/downloads/range/last-year/ngx-ui-loader`).subscribe((res: any) => {
+      // console.log(res);
+      this.ngxLoader.stop();
+    });
+    
 
   }
+
+  
 
 }

@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pais of paises | slice: (page-1) * pageSize : page * pageSize; index as i">
+        <tr *ngFor="let pais of paises | slice: (page-1) * pageSize : page * pageSize; index as i" class="animate__animated animate__fadeIn">
             <th scope="row">{{ i+1 }}</th>
             <td><img [src]="pais.flag" [alt]="pais.name" class="img-size zoom"></td>
             <td>{{pais.name}}</td>

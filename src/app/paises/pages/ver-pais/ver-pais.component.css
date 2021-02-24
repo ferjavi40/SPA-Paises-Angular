@@ -12,3 +12,7 @@
     transform: scale(1.2);
 
 }
+
+.raton{
+    cursor: pointer;
+}
