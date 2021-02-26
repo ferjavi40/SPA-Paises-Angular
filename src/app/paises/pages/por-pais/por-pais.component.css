@@ -11,3 +11,7 @@
     transform: scale(1.5);
 
 }
+
+li{
+    cursor: pointer;
+}
